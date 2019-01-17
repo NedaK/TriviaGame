@@ -1,5 +1,7 @@
 
 $(document).ready(function(){
+
+    //arrray with trivia 
 var trivia_questions = [
     {question:"What is Rachel's bra size?",
      answerChoices: ["32c", "36b", "42a", "34c"],
@@ -50,22 +52,24 @@ var clockRunning=false;
 var clicked = false;
 
 //$("#time-remaining").text(timer);
+
 $("#timer").hide();
 $("#start").on("click", startGame);
 
+//once start game button is clicked....hide button, clear feedback divs, set timer to begin countdown
 function startGame(){
-    //hide start game button
     $("#right, #wrong, #unanswered").empty();
     $("#start").hide();
     $("#time-remaining").text(timer);
     displayTrivia();
    
 }
+//function to display trivia questions and answers from trivia_questions array
 function displayTrivia(){
-    
     $("#feedback-wrapper").hide();
+    $("#time-remaining").text(timer);
     startTimer();
-    //iterate through array of trivia and display question and answer as clickable event choices
+    
     if (indexCount === trivia_questions.length){
         $("#right").html("<h2>Total Correct: "+ correct + "</h2>");
         $("#wrong").html("<h2>Total Incorrect: "+ incorrect + "</h2>");
@@ -75,7 +79,7 @@ function displayTrivia(){
     }
     
     $("#trivia-question").html("<h3>" + trivia_questions[indexCount].question + "</h3>");
-
+        //iterate through array of trivia and display question and answer as clickable event choices
         for (var j = 0; j < trivia_questions[indexCount].answerChoices.length; j++){
             var answerOption = $("<h2>");
             answerOption.addClass("selection");
@@ -83,18 +87,14 @@ function displayTrivia(){
             $("#trivia-choices").append(answerOption);
         }
 
-   // startTimer(); 
     triviaGamePlay();
        
-    
-
 
     //allow user to select and answer
     //if correct answer is selected, update screen to show correct!,image associated with that question, and increment correct variable
-            //reset timer to start again at 30
+    //reset timer to start again 
     //if incorrect, update screen approptiately
     //if time over, update screen appropriately
-
 
 }
 function triviaGamePlay(){
@@ -112,7 +112,7 @@ function triviaGamePlay(){
         clicked = true;
         stopTimer();
         
-       // console.log(selected);
+       
 
         if (clicked && selected === trivia_questions[indexCount].correctAnswer){
             correct++;
@@ -129,11 +129,11 @@ function triviaGamePlay(){
         setTimeout(displayTrivia, 5000);
         
     }); 
-    //console.log(clicked);
+    
     clicked = false;
        
 } 
-        
+    //once trivia anser is selected, show feedback to player for 5 seconds 
 function displayFeedback(){
         
         $("#feedback-wrapper").show();
@@ -170,7 +170,6 @@ function resetGame(){
     correct = 0;
     incorrect = 0;
     unanswered = 0;
-    //timer = 10;
     stopTimer();
     $("#start").show();   
 }
@@ -193,14 +192,15 @@ function stopTimer() {
 
 function decrement() {
     $("#time-remaining").text(timer);
-    //timer--;
+    timer--;
+   
 
-    if (timer <= 0) {
+    if (timer < 0) {
         unanswered++;
         stopTimer();
         displayFeedback();
         setTimeout(displayTrivia, 5000);
     }
-    timer--; 
+     
 }
 });
