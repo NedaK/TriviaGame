@@ -1,0 +1,65 @@
+
+
+header{
+    font-family: 'Indie Flower', cursive;
+    font-size: 34px;
+    /* border-bottom: 4px solid black; */
+}
+h1{
+    border-bottom: 4px solid black;
+}
+button{
+    border-radius: 12px;
+    padding: 14px 40px;
+    font-size: 20px;
+    background-color: #ff3300;
+}
+#timer{
+    color: #0099ff;
+}
+body{
+    background-image: url("../images/collage.jpg");
+    background-size: auto;
+    /* background-size: cover; */
+    margin: 0;
+    color:black;
+    
+    /* font-family: 'Ubuntu', sans-serif; */
+}
+
+#main-container{
+    background-color: white;
+    /* font-family: 'Indie Flower', cursive;*/
+    /* font-family: 'Shadows Into Light', cursive; */
+    /* font-family: 'Permanent Marker', cursive; */ 
+    font-family: 'ABeeZee', sans-serif;
+    border-radius: 8px;
+    font-size: 20px;
+    width: 75%;
+    text-align: center;
+    padding: 20px;
+    margin: 10%;
+    
+}
+#feedback-wrapper{
+    line-height: 2;
+    padding:10px;
+}
+#trivia-choices{
+    padding-top: 15px;
+    /* padding 5px; */
+    width:30%;
+    margin-left:30%;
+    text-align: center;
+    justify-content: center;
+}
+.selection{
+    padding:5px;
+}
+img{
+    width: 400px;
+    height:300px;
+    /* display:block !important;
+    visibility: visible; */
+    
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id = "main-container">
+        <header>
+            <h1>Friends Trivia Game!</h1>
+            <button id="start">Start Game</button>
+        
+        </header>
+
+        <div class= "body-wrapper" id="trivia-wrapper">
+            <div id="timer">
+                <h2>Time Remaining: <span id="time-remaining"></span> seconds</h2>
+            </div>
+            <div id="trivia-question"></div>
+            <div id="trivia-choices"></div>
+        </div>
+
+        <div class="body-wrapper" id="feedback-wrapper">
+            <div id="feedback"></div>
+            <div id="correct-answer"></div>
+            <div id="answer-img"></div>
+        </div>
+
+        <div class="body-wrapper" id="game-complete">
+            <div id="right"></div>
+            <div id="wrong"></div>
+            <div id="unanswered"></div>
+        </div>
+
+    </div>
+    
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
